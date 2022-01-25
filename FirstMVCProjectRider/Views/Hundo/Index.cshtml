@@ -1,0 +1,45 @@
+@model FirstMVCProjectRider.Models.HundoResults
+@{
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div class="row">
+    <div class="col">
+        <h1>Hundo: A Coding Challenge</h1>
+        <h4 class="lead">A JA Application using loops to print out a given range of numbers 1 - 100.</h4>
+    </div>
+    <div class="col">
+        <form asp-action="index">
+            <div class="row">
+                <div class="col">
+                    <label for="startValue" class="form-label">Start Value</label>
+                    <input id="startValue" name="startValue" class="form-control" value="1" type="number" aria-label="start value"/>
+                </div>
+                <div class="col">
+                    <label for="endValue" class="form-label">End Value</label>
+                    <input id="endValue" name="endValue" class="form-control" value="100" type="number" aria-label="end value"/>
+                </div>
+                <div class="col-12">
+                    <button type="submit"class="btn btn-primary btn-lg">Submit</button> 
+                </div>
+            </div>
+        </form>
+        <hr />
+        <h1>Hundo Results</h1>
+        <div class="row row-cols-1 row-cols-md-5 mt-2">
+        @foreach (var item in Model.HundoNumbers)
+        {
+            <div class="col">@item</div>        
+        }
+        </div>
+    </div>
+</div>
+</body>
+</html>
